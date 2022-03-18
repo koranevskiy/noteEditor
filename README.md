@@ -15,4 +15,4 @@ When editing a note, all words corresponding to tags should be highlighted.
 
 ================================================================================
 
-P.S. Click on tag to deleted itself
+P.S. Click on tag to deleted it
