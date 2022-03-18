@@ -22,8 +22,9 @@ const EditNote = ({id, description, cancel, edit, tagList, addTag}) => {
             edit(id, text)
         }
     }
+    let tags = findTags(text)
+
     const highlightTemplate = useMemo(() => {
-        let tags = findTags(text)
 
         let regex = '/'
         tagList.forEach(({body}) => {
@@ -34,7 +35,7 @@ const EditNote = ({id, description, cancel, edit, tagList, addTag}) => {
         regex = regex + '/'
         return new RegExp(regex, 'gi')
 
-    }, [tagList])
+    }, [tagList, tags])
     return (
         <div className={cl.editNote}>
             <div className={cl.body}>
