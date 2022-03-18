@@ -1,0 +1,26 @@
+@import "src/App";
+.editNote{
+  padding: 10px 20px;
+  border: 2px solid $borderColor;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .body{
+    flex: 0 1 80%;
+
+  }
+
+  .textArea{}
+  .buttons{
+    flex: 0 1 15%;
+
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 30px;
+    button + button{
+      margin-left: 15px;
+    }
+  }
+
+}

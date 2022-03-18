@@ -1,0 +1,21 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "description": "some info...1",
+      "tags": [{"id": 1, "body": "#1"}, {"id": 2, "body": "#2"}, {"id": 3, "body": "#3"}]
+
+    },
+    {
+      "id": 2,
+      "description": "some info...2",
+      "tags": [{"id": 1, "body": "#1"}, {"id": 2, "body": "#5"}]
+
+    },
+    {
+      "id": 3,
+      "description": "some info...3",
+      "tags": [{"id": 1, "body": "#5"}]
+    }
+  ]
+}

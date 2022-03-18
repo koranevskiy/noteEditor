@@ -1,0 +1,18 @@
+$borderColor: #adc3db;
+
+$darkenblueColor: #064685;
+
+.App {
+  padding: 20px 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #064685;
+  @media (max-width: 1020px) {
+    .App {
+      width: 100%;
+      max-width: 700px;
+      padding: 0 15px;
+    }
+  }
+
+}

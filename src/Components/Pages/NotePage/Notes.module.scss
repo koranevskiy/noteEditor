@@ -1,0 +1,41 @@
+.notes{
+  @media (max-width: 1020px){
+    max-width: 730px;
+    margin: 0 auto;
+  }
+  @media (max-width: 729px){
+    max-width: 500px;
+    padding: 10px 5px;
+  }
+  .filter{
+    input{
+      width: 80%;
+      @media (max-width: 729px){
+        width: 65%;
+      }
+    }
+  }
+
+  .newNote{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    textarea{
+      flex: 0 1 65%;
+    }
+    button{
+      flex: 0 1 15%;
+      display: flex;
+      justify-content: center;
+      margin-left: auto;
+
+      @media (max-width: 1020px){
+        flex: 0 1 20%;
+      }
+      @media (max-width: 729px){
+        font-size: 1.2em;
+        flex: 0 1 29%;
+      }
+    }
+  }
+}
