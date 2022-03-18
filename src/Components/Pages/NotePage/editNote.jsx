@@ -26,14 +26,13 @@ const EditNote = ({id, description, cancel, edit, tagList, addTag}) => {
 
     const highlightTemplate = useMemo(() => {
 
-        let regex = '/|\\b'
+        let regex = '/|'
         tagList.forEach(({body}) => {
             let tagString = body.slice(1)
-            regex += tagString + '\\b|\\b'
+            regex += tagString + '|'
         })
-        regex = regex.slice(0, regex.length - 2)
+        regex = regex.slice(0, regex.length )
         regex = regex + '/'
-        console.log(regex)
         return new RegExp(regex, 'gi')
 
     }, [tagList, tags])
