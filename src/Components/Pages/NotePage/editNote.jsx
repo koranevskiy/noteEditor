@@ -11,7 +11,6 @@ const EditNote = ({id, description, cancel, edit, tagList, addTag}) => {
     const editDescription = () => {
         const tempTags = findTags(text)
         let noRepeatArray = []
-
         if (tempTags) {
             tagList.forEach(({body}) => {
                 noRepeatArray.push(body)

@@ -9,11 +9,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-
     .note {
       flex: 0 1 80%;
-
     }
+    @media (max-width: 728px) {
+      flex-wrap: wrap;
+      .note{
+        flex: 0 1 auto;
+        margin-bottom: 20px;
+      }
+    }
+
 
     .noteBody {
       font-size: 1.5em;
@@ -25,12 +31,13 @@
     .noteDescription {
       word-wrap: anywhere;
       line-height: 25px;
+
     }
 
     .noteButtons {
       flex: 0 0 20%;
-      @media (max-width: 729px){
-        font-size: 1.2em;
+      @media (max-width: 728px){
+        margin-left: auto;
       }
     }
 

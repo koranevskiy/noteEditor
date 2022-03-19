@@ -20,9 +20,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     textarea{
       flex: 0 1 65%;
+      @media (max-width: 480px) {
+          margin-bottom: 10px;
+          width: 95%;
+      }
     }
+
     button{
       flex: 0 1 15%;
       display: flex;
@@ -35,6 +44,11 @@
       @media (max-width: 729px){
         font-size: 1.2em;
         flex: 0 1 29%;
+      }
+      @media (max-width: 480px) {
+
+
+
       }
     }
   }

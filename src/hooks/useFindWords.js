@@ -3,7 +3,6 @@ import {useMemo} from "react";
 
 export const useFindWords = (words, text) => {
     const template = useMemo(() => {
-
         let regex = '/|'
         words.forEach(({body}) => {
             let tagString = body.slice(1)
