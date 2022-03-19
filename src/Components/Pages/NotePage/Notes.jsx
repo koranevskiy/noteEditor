@@ -5,6 +5,7 @@ import MyInput from "../../UI/MyInput/MyInput";
 import MyTextArea from "../../UI/MyTextArea/MyTextArea";
 import MyButton from "../../UI/MyButton/MyButton";
 import {findTags} from "../../../utils/findTags";
+import {createId} from "../../../utils/createId";
 
 const Notes = ({data}) => {
     const [notes, setNotes] = useState(data)
@@ -15,12 +16,12 @@ const Notes = ({data}) => {
             setNotes(notes.map(note => {
                 return id !== note.id ? note : {
                     ...note,
-                    tags: [...note.tags, tag.map(item => ({id: Date.now() + Math.random(), body: item}))]
+                    tags: [...note.tags, tag.map(item => ({id: createId, body: item}))]
                 }
             }))
         } else {
             setNotes(notes.map(note => {
-                return id !== note.id ? note : {...note, tags: [...note.tags, {id: Date.now(), body: tag}]}
+                return id !== note.id ? note : {...note, tags: [...note.tags, {id: createId(), body: tag}]}
             }))
         }
     }
@@ -33,18 +34,18 @@ const Notes = ({data}) => {
         const tagsBodies = findTags(newNotice)
         let tagArrayObjects = []
         if (tagsBodies) {
-            tagArrayObjects = tagsBodies.map(tag => ({id: Date.now() + Math.random(), body: tag}))
+            tagArrayObjects = tagsBodies.map(tag => ({id: createId, body: tag}))
         }
-        const note = {id: Date.now(), description: newNotice, tags: tagArrayObjects}
+        const note = {id: createId(), description: newNotice, tags: tagArrayObjects}
         setNotes([...notes, note])
         setNewNotice('')
     }
     const searchNotes = useMemo(() => {
         let searchArray = notes
         const tags = findTags(query)
-        if(tags){
+        if (tags) {
             let tagsQr = tags.sort().join('')
-            return searchArray = notes.filter(note => {
+            searchArray = notes.filter(note => {
                 let noteQr = note.tags.map(tag => tag.body).sort().join('')
                 return noteQr.includes(tagsQr)
             })
@@ -60,7 +61,7 @@ const Notes = ({data}) => {
                 return id !== note.id ? note : {
                     id,
                     description,
-                    tags: tags.map(tag => ({id: Date.now() + Math.random(), body: tag}))
+                    tags: tags.map(tag => ({id: createId(), body: tag}))
                 }
             }))
         } else {
