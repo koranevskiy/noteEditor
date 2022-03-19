@@ -1,8 +1,9 @@
-import React, {useMemo, useState} from 'react';
+import React, {useState} from 'react';
 import cl from './editNote.module.scss'
 import MyButton from "../../UI/MyButton/MyButton";
 import {findTags} from "../../../utils/findTags";
 import {HighlightWithinTextarea} from 'react-highlight-within-textarea'
+import {useFindWords} from "../../../hooks/useFindWords";
 
 const EditNote = ({id, description, cancel, edit, tagList, addTag}) => {
     const [text, setText] = useState(description)
@@ -22,20 +23,8 @@ const EditNote = ({id, description, cancel, edit, tagList, addTag}) => {
             edit(id, text)
         }
     }
-    let tags = findTags(text)
 
-    const highlightTemplate = useMemo(() => {
-
-        let regex = '/|'
-        tagList.forEach(({body}) => {
-            let tagString = body.slice(1)
-            regex += tagString + '|'
-        })
-        regex = regex.slice(0, regex.length )
-        regex = regex + '/'
-        return new RegExp(regex, 'gi')
-
-    }, [tagList, tags])
+    const highlightTemplate = useFindWords(tagList, text)
     return (
         <div className={cl.editNote}>
             <div className={cl.body}>
